@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12365a">
+  <title>Rangapur AI Learning Lab · Week 1 Assignment</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#18364d;background:#f3f8fb;line-height:1.55;--navy:#12365a;--blue:#0969ad;--teal:#087c83;--line:#d7e5ee;--cream:#fffdf7}
+    *{box-sizing:border-box}[hidden]{display:none!important}body{margin:0}button,textarea,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.52}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #ffa924;outline-offset:3px}
+    .hero{background:linear-gradient(125deg,#12365a,#12628c 70%,#079ca1);color:white;padding:30px max(20px,calc((100% - 980px)/2)) 90px}.eyebrow{font-weight:800;letter-spacing:.11em;text-transform:uppercase;font-size:.76rem;color:#a9eff0}.hero h1{font-size:clamp(1.9rem,5vw,3.3rem);line-height:1.12;margin:13px 0}.hero p{font-size:1.05rem;max-width:60ch;opacity:.94;margin:0}.brand{display:flex;align-items:center;gap:12px;font-size:.9rem;font-weight:700}.mark{width:40px;height:40px;border-radius:13px;background:#fff;color:#13618a;display:grid;place-items:center;font-weight:900;font-size:1.2rem}
+    main{max-width:980px;margin:-55px auto 60px;padding:0 18px}.panel{background:white;border:1px solid var(--line);border-radius:22px;box-shadow:0 14px 32px #12365a13;padding:clamp(20px,4vw,38px)}.bar{display:flex;gap:8px;margin-bottom:16px}.segment{height:8px;background:#e3edf2;flex:1;border-radius:99px}.segment.done{background:#26a9a2}.segment.current{background:#f2aa3d}.steps{display:flex;justify-content:space-between;gap:8px;font-size:.82rem;color:#51687b;margin-bottom:30px}.steps strong{color:var(--navy)}.step{display:none}.step.active{display:block}.step h2{font-size:clamp(1.35rem,3vw,1.9rem);margin:0 0 8px;color:var(--navy)}.lead{margin:0 0 22px;color:#52697b}.notice{background:#eaf8f7;border-left:5px solid #159b95;padding:13px 16px;border-radius:9px;margin:20px 0;color:#154e55}.field-label{font-weight:750;display:block;margin-bottom:8px}.name-field{width:100%;max-width:580px;min-height:54px;border:2px solid #c5d9e7;border-radius:12px;padding:12px 15px}.question{border:2px solid var(--line);border-radius:16px;margin:13px 0;background:#fff;overflow:hidden}.question.selected{border-color:#138ba1;background:#fbffff}.question.disabled-choice:not(.selected){opacity:.67}.pick{width:100%;display:flex;align-items:flex-start;gap:13px;padding:17px;text-align:left;border:0;background:transparent;color:inherit}.check{flex:none;display:grid;place-items:center;margin-top:2px;width:26px;height:26px;border:2px solid #7a9cb0;border-radius:7px;color:white;font-weight:bold}.selected .check{background:#087c83;border-color:#087c83}.qnum{font-weight:800;color:#087c83;font-size:.86rem}.qtitle{font-weight:690;display:block;line-height:1.45;margin-top:2px}.answer-wrap{padding:0 17px 18px 56px}.answer-wrap label{display:block;font-size:.87rem;font-weight:720;margin:0 0 8px;color:#285c69}.answer-wrap textarea{width:100%;min-height:128px;resize:vertical;border:2px solid #bad3e1;border-radius:10px;background:white;padding:12px;line-height:1.5}.save-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:10px}.save-btn{border:1px solid #087c83;background:#e8f7f5;color:#075b62;font-weight:800;border-radius:10px;padding:10px 15px;min-height:44px}.save-note{color:#166a59;font-size:.86rem;font-weight:700}.small{font-size:.87rem;color:#576d7c}.counter{display:inline-block;padding:6px 12px;background:#e8f3f7;color:#15566f;font-weight:800;border-radius:99px;margin-bottom:10px}.counter.full{background:#ddf4ec;color:#137051}.error{color:#a92d29;font-weight:700;min-height:1.4em;margin:16px 0 4px}.actions{border-top:1px solid var(--line);padding-top:20px;margin-top:22px;display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:13px 21px;min-height:50px;background:var(--blue);color:white;font-weight:800}.btn.secondary{background:#e9f1f6;color:var(--navy)}.btn.good{background:#087c69}.btn.light{border:1px solid #d0dee8;background:white;color:var(--navy)}.review{padding:12px 16px;border:1px solid var(--line);border-radius:12px;margin:13px 0;background:var(--cream)}.review h3{margin:0 0 4px}.review ul{margin:6px 0;padding-left:21px}.checkline{display:flex;gap:11px;align-items:flex-start;margin:20px 0}.checkline input{width:21px;height:21px;flex:none;margin-top:2px}.success{background:#edf9f4;border:1px solid #99d8b4;padding:22px;border-radius:16px}.success h2{color:#0c6b4e}.code-banner{background:#fff5dd;border:2px solid #f0bf56;border-radius:15px;padding:16px;margin:0 0 23px}.code-number{font-size:2rem;font-weight:900;letter-spacing:.15em;color:#143e5b}.resume-box{margin-top:24px;padding:18px;border:1px solid var(--line);border-radius:15px;background:#f7fafc}.resume-box h3{margin:0 0 8px}.resume-row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.resume-row input{width:170px;min-height:50px;border:2px solid #c5d9e7;border-radius:10px;padding:8px 12px;font-size:1.2rem;letter-spacing:.12em}.status{min-height:1.4em;color:#146b59;font-weight:700;margin:8px 0}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}footer{text-align:center;margin:25px;color:#567080;font-size:.84rem}#transport{display:none}@media(max-width:560px){.steps{font-size:.7rem}.steps span{max-width:72px}.pick{padding:15px}.answer-wrap{padding-left:15px}.actions .btn{flex:1}.hero{padding-bottom:84px}}
+  </style>
+</head>
+<body>
+  <header class="hero"><div class="brand"><span class="mark" aria-hidden="true">✦</span>IGNITE AI LABS <span aria-hidden="true">·</span> HIPPOCAMPUS RANGAPUR</div><p class="eyebrow" style="margin-top:29px">AI Learning Lab / Week One</p><h1>Show what you have learned.</h1><p>Choose questions, answer in your own words, and share where you would like help. English or Telugu are both welcome.</p></header>
+  <main><div class="panel"><div class="bar" id="progress" aria-label="Progress"></div><div class="steps"><span>Name</span><span>Part A<br><strong>4 answers</strong></span><span>Part B<br><strong>2 answers</strong></span><span>Part C<br><strong>3 answers</strong></span><span>Review</span></div>
+    <div class="code-banner" id="codeBanner" hidden><strong>Your continuation code</strong><div class="code-number" id="displayCode"></div><span class="small">Write down this code and your name. Use both to return later. On shared computers, close this tab when you finish.</span></div>
+    <section class="step active" data-step="0"><h2>Welcome! What is your name?</h2><p class="lead">Please use the name your teacher knows. If you share a computer, each student should submit their own answers.</p><label class="field-label" for="studentName">Your full name <span aria-hidden="true">*</span></label><input class="name-field" id="studentName" maxlength="100" autocomplete="name" placeholder="Type your name here"><div class="resume-box"><h3>Returning to finish?</h3><p class="small">Type the same name above and your four-digit code. Then choose <strong>Continue my work</strong>.</p><div class="resume-row"><input id="resumeCode" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Your four-digit continuation code" placeholder="4-digit code"><button type="button" class="btn secondary" id="resumeButton">Continue my work →</button></div></div><p class="notice">Save each question after writing your answer. The first save gives you a four-digit code to write down. You can close the form and come back on another day. Please do not type passwords, phone numbers, addresses, or other private information.</p></section>
+    <section class="step" data-step="1"><h2>Part A · What did you learn?</h2><p class="lead">Choose <strong>4 of 8</strong> questions. Write about 2–4 sentences for each. An example is helpful.</p><div class="counter" id="countA"></div><div id="questionsA"></div></section>
+    <section class="step" data-step="2"><h2>Part B · Your new ideas</h2><p class="lead">Choose <strong>2 of 4</strong> questions and tell us what you think.</p><div class="counter" id="countB"></div><div id="questionsB"></div></section>
+    <section class="step" data-step="3"><h2>Part C · Try an AI coach</h2><p class="lead">Choose <strong>3 of 7</strong> activities. First choose one topic: English, Python, another subject, or a skill you want to learn. You can use an AI tool for the activities you select.</p><label class="field-label" for="topic">My topic <span aria-hidden="true">*</span></label><input class="name-field" id="topic" maxlength="120" placeholder="For example: English speaking or Python"><p class="small">If you choose an activity about a prompt or AI response, include the actual prompt or what the AI told you in your answer. If you choose the practice activity, describe what you tried and any mistakes you corrected.</p><div class="counter" id="countC"></div><div id="questionsC"></div></section>
+    <section class="step" data-step="4"><h2>Check your work</h2><p class="lead">Read this short checklist before sending your answers to Kiran Sir.</p><div id="review"></div><label class="checkline"><input type="checkbox" id="honesty"><span>These are my own answers. I have said where AI helped me, and I did not include private information.</span></label><div class="notice">Your answers will be saved in the teacher’s Google Sheet. Please wait for the confirmation message after pressing Submit.</div></section>
+    <section class="step" data-step="5"><div class="success"><h2>Well done! Your answers have been submitted.</h2><p>Your teacher can now see what you learned and where you need help.</p><p><strong>Submission receipt:</strong> <span id="receipt"></span></p></div><div class="actions"><button type="button" class="btn secondary" id="newStudent">Start for another student</button></div></section>
+    <p class="status" id="saveStatus" role="status" aria-live="polite"></p><p class="error" id="error" role="alert" aria-live="assertive"></p><div class="actions" id="nav"><button type="button" class="btn secondary" id="back">← Back</button><button type="button" class="btn" id="next">Next →</button></div>
+  </div><footer>Rangapur AI Learning Lab · Think · Explore · Learn · Create</footer></main>
+  <iframe id="transport" name="submissionTransport" title="Submission transport"></iframe>
+  <script>
+    'use strict';
+    // Paste your deployed Google Apps Script /exec URL between these quotes.
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRwarSzG2GdEF-XWIhPRTpgvLAtVCZw-aFfyTjmypDmdgWrRzWn8_TBUGHxbXWAfC3CA/exec';
+    const ITEMS = {
+      A:[
+        ['A1','What is one difference between AI and generative AI?'],
+        ['A2','What is the difference between using AI as a coach and using it as a shortcut? Give one example of each.'],
+        ['A3','We used Role, Context, Goal and Method to write a prompt. Explain what each part tells the AI.'],
+        ['A4','What happened when we changed a prompt from “slightly challenging” Python questions to “easy” questions? What did that teach you about prompts?'],
+        ['A5','How can you ask AI to help when its first explanation is confusing? Write two follow-up requests you could make.'],
+        ['A6','Why should you attempt a question yourself before looking at AI’s answer?'],
+        ['A7','Name one way an AI answer could mislead you. How would you check it?'],
+        ['A8','What is one rule from our AI honour code that you will follow? Explain why it matters.']
+      ],
+      B:[
+        ['B9','What surprised you most during our first three sessions? Describe the moment.'],
+        ['B10','Name two new ways you could use AI to learn something you care about. One can relate to school; the other can relate to your interests, home or community.'],
+        ['B11','What is one skill you want to improve in the next 30 days? Why does it matter to you? List three small actions and one way to measure your progress.'],
+        ['B12','What is one question about AI that you would like us to explore in a future session?']
+      ],
+      C:[
+        ['C1','Start with your own thinking. Write what you already know about your topic and one thing you find difficult.'],
+        ['C2','Write a short prompt, such as “Teach me Python.” Record what AI gives you.'],
+        ['C3','Improve the prompt using Role, Context, Goal and Method. Ask AI for three practice questions one at a time; it should wait for your answers and explain mistakes without immediately giving away answers. Record your improved prompt.'],
+        ['C4','Answer three practice questions yourself. If an explanation is unclear, ask AI for a simpler example or an explanation in Telugu. Describe your answers and what happened.'],
+        ['C5','Compare your short and improved prompts. Which response helped you learn more? Point to one specific difference.'],
+        ['C6','Check one claim or answer from AI using a textbook, teacher, worked example or another reliable source. State what you checked and what you found. If you cannot verify it, say so.'],
+        ['C7','Finish these sentences: “I understood this better after…”, “I still need help with…”, and “My next idea is…”.']
+      ]
+    };
+    const REQUIRED={A:4,B:2,C:3};
+    let step=0, code='', pendingId='', pending=null, busy=false, dirty=false, changeCount=0;
+    const firstSaveKey=crypto.randomUUID?crypto.randomUUID():String(Date.now())+'-'+Math.random().toString(36).slice(2);
+    const $=id=>document.getElementById(id);
+    const selected=part=>[...document.querySelectorAll('[data-part="'+part+'"].selected')];
+    const markDirty=()=>{dirty=true;changeCount++;$('saveStatus').textContent='Changes in this tab are not saved yet. Use Save this answer.';};
+    function renderQuestions(){
+      for(const part of 'ABC'){
+        $('questions'+part).innerHTML=ITEMS[part].map(([id,q])=>`<div class="question" data-part="${part}" data-id="${id}"><button class="pick" type="button" aria-pressed="false" aria-controls="answer-${id}"><span class="check" aria-hidden="true"></span><span><span class="qnum">${id.replace(/^[A-Z]/,'Question ')}</span><span class="qtitle">${q}</span></span></button><div class="answer-wrap" id="answer-${id}" hidden><label for="text-${id}">My answer</label><textarea id="text-${id}" maxlength="3000" placeholder="Write in your own words. English or Telugu is fine."></textarea><div class="save-row"><button type="button" class="save-btn">Save this answer</button><span class="save-note" aria-live="polite"></span></div></div></div>`).join('');
+        $('questions'+part).addEventListener('click',e=>{
+          if(busy)return;
+          const save=e.target.closest('.save-btn');
+          if(save){saveQuestion(save.closest('.question'));return;}
+          const b=e.target.closest('.pick');if(!b)return;
+          const card=b.closest('.question');if(!card.classList.contains('selected')&&selected(part).length>=REQUIRED[part])return;
+          const on=!card.classList.contains('selected');showQuestion(card,on);updateCount(part);markDirty();$('error').textContent='';if(on)card.querySelector('textarea').focus();
+        });
+        $('questions'+part).addEventListener('input',e=>{if(e.target.tagName==='TEXTAREA'){e.target.closest('.question').querySelector('.save-note').textContent='Not saved yet';markDirty();}});
+        updateCount(part);
+      }
+    }
+    function showQuestion(card,on){card.classList.toggle('selected',on);card.querySelector('.pick').setAttribute('aria-pressed',String(on));card.querySelector('.check').textContent=on?'✓':'';card.querySelector('.answer-wrap').hidden=!on;}
+    function updateCount(part){const n=selected(part).length;$('count'+part).textContent=`${n} of ${REQUIRED[part]} selected`;$('count'+part).classList.toggle('full',n===REQUIRED[part]);document.querySelectorAll('[data-part="'+part+'"]').forEach(c=>c.classList.toggle('disabled-choice',n===REQUIRED[part]&&!c.classList.contains('selected')));}
+    function validate(s){
+      if(s===0)return $('studentName').value.trim().length<2?'Please enter your full name.':'';
+      if(s===3&&!$('topic').value.trim())return 'Please write your topic.';
+      if(s>=1&&s<=3){const part='ABC'[s-1];if(selected(part).length!==REQUIRED[part])return `Please choose exactly ${REQUIRED[part]} questions in Part ${part}.`;for(const c of selected(part)){if(c.querySelector('textarea').value.trim().length<5){c.scrollIntoView({behavior:'smooth',block:'center'});return `Please write an answer for ${c.dataset.id}.`;}}}
+      if(s===4&&!$('honesty').checked)return 'Please tick the statement after checking your answers.';
+      return '';
+    }
+    function setStep(n){step=n;document.querySelectorAll('.step').forEach(el=>el.classList.toggle('active',Number(el.dataset.step)===step));$('progress').innerHTML=Array.from({length:5},(_,i)=>`<span class="segment ${i<step?'done':i===step?'current':''}"></span>`).join('');$('nav').hidden=step===5;$('back').hidden=step===0;$('next').textContent=step===4?'Submit my answers':'Next →';$('error').textContent='';if(step===4)renderReview();window.scrollTo({top:0,behavior:'smooth'});}
+    function renderReview(){const add=(title,lines)=>{const box=document.createElement('div');box.className='review';const h=document.createElement('h3');h.textContent=title;box.append(h);const ul=document.createElement('ul');for(const line of lines){const li=document.createElement('li');li.textContent=line;ul.append(li);}box.append(ul);$('review').append(box);};$('review').replaceChildren();add('Student',[$('studentName').value.trim()]);for(const part of 'ABC')add('Part '+part+(part==='C'?' · '+$('topic').value.trim():''),selected(part).map(c=>c.dataset.id+' · '+c.querySelector('.qtitle').textContent));if(dirty){const p=document.createElement('p');p.className='notice';p.textContent='You have changes since your last question save. Submitting will save these final answers.';$('review').append(p);}}
+    function state(){const answers={};for(const part of 'ABC')answers[part]=selected(part).map(c=>({id:c.dataset.id,answer:c.querySelector('textarea').value.trim()}));return {studentName:$('studentName').value.trim(),topic:$('topic').value.trim(),answers,code,firstSaveKey,submissionId:pendingId};}
+    function connected(){if(/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(SCRIPT_URL))return true;$('error').textContent='The teacher needs to connect the form to Google Sheets before students can save or continue.';return false;}
+    function request(action,values,success){
+      if(busy||!connected())return;
+      const requestId=crypto.randomUUID?crypto.randomUUID():String(Date.now())+'-'+Math.random().toString(36).slice(2);
+      const snapshot=changeCount;
+      busy=true;$('back').disabled=$('next').disabled=$('resumeButton').disabled=true;
+      document.querySelectorAll('.save-btn').forEach(b=>b.disabled=true);
+      $('error').textContent='';$('saveStatus').textContent=action==='load'?'Looking up your work…':action==='save'?'Saving your work…':'Submitting your answers…';
+      const data={...values,action,requestId,clientOrigin:location.origin};
+      const form=document.createElement('form');form.method='POST';form.action=SCRIPT_URL;form.target='submissionTransport';form.style.display='none';const input=document.createElement('input');input.name='payload';input.value=JSON.stringify(data);form.append(input);document.body.append(form);
+      pending={requestId,success,snapshot,timeout:setTimeout(()=>finishRequest(false,'No confirmation arrived. Check the connection and ask your teacher to check the Sheet before trying again.'),30000)};
+      try{form.submit();}catch(err){finishRequest(false,'The browser could not send this request. Please try again.');}finally{form.remove();}
+    }
+    function finishRequest(ok,message){if(!pending)return;clearTimeout(pending.timeout);pending=null;busy=false;$('back').disabled=$('next').disabled=$('resumeButton').disabled=false;document.querySelectorAll('.save-btn').forEach(b=>b.disabled=false);if(!ok){$('saveStatus').textContent='';$('error').textContent=message||'Could not reach the response Sheet. Please try again.';}}
+    function showCode(value){code=String(value);$('displayCode').textContent=code;$('codeBanner').hidden=false;$('studentName').readOnly=true;}
+    function saveQuestion(card){const answer=card.querySelector('textarea').value.trim();if($('studentName').value.trim().length<2){$('error').textContent='Please enter your full name before saving.';return;}if(answer.length<5){$('error').textContent='Please write an answer to '+card.dataset.id+' before saving it.';return;}const note=card.querySelector('.save-note');request('save',{...state(),lastQuestion:card.dataset.id},(response,snapshot)=>{showCode(response.code);if(snapshot===changeCount){dirty=false;$('saveStatus').textContent='Saved! Write down your four-digit continuation code.';}else $('saveStatus').textContent='Saved. You have newer changes to save too.';note.textContent='Saved to your teacher’s Sheet';});}
+    function restoreDraft(draft){$('studentName').value=draft.studentName;$('topic').value=draft.topic||'';for(const part of 'ABC'){for(const card of document.querySelectorAll('[data-part="'+part+'"]')){showQuestion(card,false);card.querySelector('textarea').value='';card.querySelector('.save-note').textContent='';}for(const answer of draft.answers[part]){const card=document.querySelector('[data-id="'+answer.id+'"]');if(card){showQuestion(card,true);card.querySelector('textarea').value=answer.answer||'';card.querySelector('.save-note').textContent=answer.answer?'Saved':'';}}updateCount(part);}showCode(draft.code);dirty=false;$('saveStatus').textContent='Welcome back! Your saved answers are ready.';const part=draft.lastQuestion?.charAt(0);setStep('ABC'.includes(part)?'ABC'.indexOf(part)+1:1);$('saveStatus').textContent='Welcome back! Your saved answers are ready.';}
+    function continueWork(){const name=$('studentName').value.trim(),resumeCode=$('resumeCode').value.trim();if(name.length<2||!/^\d{4}$/.test(resumeCode)){$('error').textContent='Enter your full name and your four-digit code.';return;}request('load',{studentName:name,code:resumeCode},response=>restoreDraft(response.draft));}
+    function submit(){if(!pendingId)pendingId=crypto.randomUUID?crypto.randomUUID():String(Date.now())+'-'+Math.random().toString(36).slice(2);request('submit',state(),response=>{dirty=false;showCode(response.code);$('receipt').textContent=response.receipt||pendingId.slice(0,8);setStep(5);$('saveStatus').textContent='Your complete assignment was saved.';});}
+    window.addEventListener('message',event=>{
+      if(!/^https:\/\/[a-z0-9.-]*googleusercontent\.com$/.test(event.origin)&&event.origin!=='https://script.google.com')return;
+      const d=event.data;if(!pending||!d||d.type!=='RANGAPUR_ASSIGNMENT'||d.requestId!==pending.requestId)return;
+      const callback=pending.success,snapshot=pending.snapshot;finishRequest(Boolean(d.ok),d.message);
+      if(d.ok)callback(d,snapshot);
+    });
+    window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+    $('studentName').addEventListener('input',()=>{if(code)markDirty();});$('topic').addEventListener('input',markDirty);
+    $('resumeButton').onclick=continueWork;
+    $('back').onclick=()=>setStep(step-1);
+    $('next').onclick=()=>{const message=validate(step);if(message){$('error').textContent=message;return;}if(step===4)submit();else setStep(step+1);};
+    $('newStudent').onclick=()=>location.reload();renderQuestions();setStep(0);
+  </script>
+</body>
+</html>
